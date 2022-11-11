@@ -1,0 +1,13 @@
+
+.card__info{
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: black;
+    line-height: 150%;
+    text-align: justify;
+}
+
+.card__info b{
+    font-weight: 900;
+}
+

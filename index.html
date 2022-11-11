@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./styles/reset.css"/>
+    <link rel="stylesheet" href="./styles/style.css"/>
+
+    <link rel="stylesheet" href="./styles/header/header.css"/>
+    <link rel="stylesheet" href="./styles/header/header-title.css"/>
+
+    <link rel="stylesheet" href="./styles/card/card.css"/>
+    <link rel="stylesheet" href="./styles/card/card-title.css"/>
+    <link rel="stylesheet" href="./styles/card/card-info.css"/>
+    <link rel="stylesheet" href="./styles/card/card-example-img.css"/>
+
+    <link rel="stylesheet" href="./styles/list/list.css"/>
+    <link rel="stylesheet" href="./styles/list/list-item.css"/>
+    <link rel="stylesheet" href="./styles/list/list-item-icon.css"/>
+    <link rel="stylesheet" href="./styles/list/list-item-content.css"/>
+
+    <link rel="stylesheet" href="./styles/examples/examples.css"/>
+    <link rel="stylesheet" href="./styles/examples/examples-card.css"/>
+
+    <link rel="shortcut icon" href="" type="image/x-icon"/>
+    <title>Event Listeners</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">EVENT LISTENERS</h1>
+    </header>
+    <main>
+        <section class="card fade" data-card="1">
+            <div>
+                <div>
+                    <h2 class="card__title">O que é um Event Listener?</h2>
+    
+                    <p class="card__info">Os eventos são basicamente um <b>conjunto de ações</b> que são realizadas em um determinado elemento da página web, seja ele um <b>texto</b>, uma <b>imagem</b>, ou uma <b>div</b>. Muitas das interações do usuário com o conteúdo do seu site podem ser consideradas eventos.
+                        <br/><br/>Por exemplo, no botão ao lado estamos adicionando um <b>event listener</b> para ouvir quando o botão <b>"Shake It!"</b> for clicado. E assim que o evento for disparado (quando o botão for clicado), então o <b>conjunto de ações</b> dentro da função que foi passada como parâmetro será efetuado.
+                    </p>
+                </div>
+                <div>
+                    <img src="./img/shakeItButton.png" alt="Código para Exemplo 1" class="card__example--img"/>
+                    <button class="button" data-button="Shake">Shake It!</button>
+                </div>
+            </div>
+            <div>
+                <h3 class="card__title">Como usar Event Listeners?</h3>
+                <p class="card__info">No JavaScript há várias maneiras de adicionar um <b>event listener</b> à um elemento:</p>
+                <ul class="list">
+                    <li class="list__item " data-list="eventsUsage">
+                        Atributo de manipulação de eventos dentro do HTML
+                        <ion-icon class="list__item__icon" name="chevron-up-outline"></ion-icon>
+                        <div class="list__item__content contracted">
+                            <img src="./img/eventListener1.png" alt="Event Listener exemplo 1" class="card__example--img"/>
+                            <p class="card__info">Repare que no código acima, a função <b>"shakeCard()"</b> está sendo chamada diretamente dentro do elemento HTML. Este tipo de chamada é considerada mal prática, pois a longo prazo a mistura de manipulação de eventos dentro do html pode prejudicar a manutenção do código.
+                                <br/><br/>Além disso, este método de captura de eventos pode causar falhas durante o carregamento da página, se o elemento carregar antes que seu código em javascript e o usuário tentar interagir com o elemento, um erro de referencia será gerado.
+                            </p>
+                            <br/>
+                            <p class="card__info">É importante notar que podemos atribuir as propriedades de manipulação de eventos, como <b>"onClick()"</b>, em um elemento através do javascript, resolvendo assim o problema relacionado a manutenção do código. No entanto, o elemento ainda estaria limitado há apenas uma função por evento.</p>
+                            <img src="./img/eventListener2.png" alt="Event Listener exemplo 2" class="card__example--img"/>
+                            <p class="card__info"><br/><b>Obs:</b> Os atributos de manipulação de eventos disponibilizados pelo HTML não suportam mais de uma função sendo chamada.</p>
+                        </div>
+                    </li>
+
+                    
+
+                    <li class="list__item " data-list="eventsUsage">
+                        Método HTML DOM addEventListener()
+                        <ion-icon class="list__item__icon" name="chevron-up-outline"></ion-icon>
+                        <div class="list__item__content contracted">
+                            <p class="card__info">O método <b>addEventListener()</b> pode ser usado em qualquer elemento no DOM. Leva como parâmetro o evento que deve ser ouvido, uma função a ser chamada sempre que o evento for disparado e a forma de propagação no qual o evento vai ser disparado.
+                                <br/><br/>Diferente dos manipuadores de eventos do HTML, o <b>addEventListener()</b> aceita qualquer número de manipuladores de eventos, podendo ser adicionado a um único elemento sem sobrescrever os manipuladores de eventos existentes.</p>
+                            <img src="./img/eventListener3.png" alt="Event Listener exemplo 3" class="card__example--img"/>
+                            <p class="card__info">Como podemos ver na imagem acima, o <b>"elementoQualquer"</b> está recebendo dois event listeners <b>"click"</b>, e contanto que as funções passadas como argumento sejam diferentes, ambas serão disparadas quando o elemento for clicado. Alguns do eventos mais usados são: <b>click</b>, <b>dblclick</b>, <b>mousedown</b>, <b>keydown</b>, <b>keypress</b>, <b>keyup</b>, etc...
+                                <br/><br/>O segundo argumento a ser passado é a prória função que deve ser executada quando o evento ocorrer, essa função é chamada de <b>callback</b>, pois ela é passada como argumento dentro de outra função.<br/>Essa função pode receber um argumento passado pelo EventListener chamado <b>evento</b>, que nada mais é que o objeto que representa o evento em si. Eventos podem representar desde interações básicas do usuário (cliques, rolagem da página...) até notificações automáticas de novidades no DOM.
+                                <br/><br/>O terceiro argumento <b>"useCapture"</b>, pode receber como valor um booleano (true ou false) ou um objeto onde serão passadas as configurações para execução da função.
+                                <br/><br/>Quando passamos um valor booleano, estamos declarando quando a função passada como parâmetro será executada, por exemplo:
+                            </p>
+
+                            <div>
+                                <img src="./img/eventListener4.png" alt="Event Listener exemplo 4" class="card__example--img2"/>
+                                <p class="card__info">Se possuirmos três divs chamadas <b>grandparent</b>, <b>parent</b> e <b>child</b> respectivamente, cada uma com um event listener de click. <br/>Ao clicarmos no elemento <b>filho</b>, o DOM será percorrido uma primeira vez até encontrar o elemento no qual o evento aconteceu, a função será executada, e o DOM será percorrido novamente, dessa vez, do elemento clicado até o começo do documento.
+                                    <br/>Quando usamos <b>true</b> ou <b>false</b> como parâmetros, estamos dizendo em qual dessas voltas pelo DOM a função deverá ser executada. Sendo <b>false</b> a primeira volta, chamada de <b>Capture Phase</b>, e <b>true</b> a segunda volta, chamada de <b>Bubble Phase</b>.
+                                </p>
+                            </div>
+
+                            <br/><br/>
+                            <h3 class="card__title">Capture Phase</h3>
+                            <div>
+                                <p class="card__info">Como podemos ver na imagem ao lado, quando o elemento é clicado o evento começa a percorrer a árvore do DOM elemento por elemento, está é primeira volta. Neste caso, o elemento clicado foi o <b>child</b>, e somente quando chegar nele é que a volta terminará.
+                                    <br/>Se os elementos pais tiverem event listeners do mesmo tipo do <b>child</b>, no caso, evento <b>"click"</b>, então será checado o valor booleano passado no método <b>addEventListener()</b>. Se o valor for <b>false</b>, então o evento relacionado ao elemento pai será executado antes do evento do elemento filho.
+                                </p>
+                                <img src="./img/eventListener5.png" alt="Event Listener exemplo 5" class="card__example--img2"/>
+                            </div>
+
+                            <br/><br/>
+                            <h3 class="card__title">Bubble Phase</h3>
+                            <div>
+                                <p class="card__info">Assim que a primeira volta é terminada, a função do elemento clicado é executado, e o DOM é percorrido elemento por elemento uma segunda vez. Neste caso, a volta só vai terminar quando o último elemento, <b>document</b> for verificado.
+                                    <br/>Se os elementos pais tiverem event listeners do mesmo tipo do <b>child</b>, no caso, evento <b>"click"</b>, então será checado o valor booleano passado no método <b>addEventListener()</b>. Se o valor for <b>true</b>, então o evento relacionado ao elemento pai será executado depois do evento do elemento filho.
+                                </p>
+                                <img src="./img/eventListener6.png" alt="Event Listener exemplo 6" class="card__example--img2"/>
+                            </div>
+
+                            <br/><br/>
+                            <h3 class="card__title">Mas e se eu não quiser que o evento do elemento pai ocorra?</h3>
+                            <p class="card__info">Se você quiser por exemplo, impedir que um evento de a volta toda no DOM ativando todos os event listeners que cumprirem os requisitos. Para isso existe a função <b>"event.stopPropagation"</b>, onde "event" é o argumento passado na função de callback.</p>
+                            <img src="./img/eventListener7.png" alt="Event Listener exemplo 7" class="card__example--img2"/>
+                            <p class="card__info">Esse método vai parar imediatamente a propagação do capture e do bubling.</p>
+                            
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="examples">
+
+            <div class="examples__card">
+                <h4 class="subtitle">Passe o Mouse por cima</h4>
+                <div class="box"></div>
+            </div>
+        </section>
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="scripts/script.js" type="text/javascript"></script>
+    </main>
+</body>
+</html>

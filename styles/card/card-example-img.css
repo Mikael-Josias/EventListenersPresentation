@@ -1,0 +1,9 @@
+
+.card__example--img, .card__example--img2{
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.card__example--img2{
+    width: calc(50% - 1rem);
+}

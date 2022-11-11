@@ -1,0 +1,36 @@
+
+.card{
+    display: flex;
+    flex-direction: column;
+
+    background-color: white;
+
+    border-radius: 1rem;
+    padding: 2.5rem;
+    margin: auto;
+    margin-bottom: 5rem;
+
+    width: 100rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .2);
+}
+
+.card > div:first-child{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+
+    width: 100%;
+}
+
+.card div:first-child div:first-child{
+    width: calc(40% - 1rem);
+}
+
+.card div:first-child div:last-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    width: calc(60% - 1rem);
+}

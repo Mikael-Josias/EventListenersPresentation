@@ -1,0 +1,8 @@
+
+.card__title{
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--clr-subtitle);
+
+    margin-bottom: 2rem;
+}

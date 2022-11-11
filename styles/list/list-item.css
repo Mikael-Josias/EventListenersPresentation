@@ -1,0 +1,26 @@
+
+.list__item{
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: black;
+    background-color: rgb(228, 228, 228);
+
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    width: 100%;
+
+    overflow: hidden;
+
+    position: relative;
+    cursor: pointer;
+
+    transition: 1s;
+}
+
+.list__item:first-child{
+    margin-top: 2rem;
+}
+
+.list__item:last-child{
+    margin-bottom: 0;
+}

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root{
+    --font-principal: 'Roboto', sans-serif;
+
+    --clr-primary: #00171f;
+    --clr-title: #00a8e8;
+    --clr-subtitle: #003459;
+    --clr-body: #edf2fb;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-family: var(--font-principal);
+    font-size: 10px;
+}
+
+body{
+    background-color: var(--clr-body);
+}
+
+main{
+    padding-top: 5rem;
+    margin: auto;
+}
+
+.button{
+    font-size: 1.5rem;
+    font-weight: 500;
+
+    color: white;
+    background-color: var(--clr-subtitle);
+    border: none;
+
+    padding: 1.5rem 3rem;
+    cursor: pointer;
+}
+
+.fade{
+    animation: fade 2s ;
+}
+
+@keyframes fade {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.shake-it{
+    animation: shakeIt .5s infinite;
+}
+
+@keyframes shakeIt {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.subtitle{
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--clr-primary);
+    margin-bottom: 1.5rem;
+}
+
+.box{
+    background-color: red;
+    height: 25rem;
+    width: 25rem;
+}
